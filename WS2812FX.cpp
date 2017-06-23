@@ -180,6 +180,13 @@ const char* WS2812FX::getModeName(uint8_t m) {
   }
 }
 
+uint8_t WS2812FX::getModeByName(const char* name) {
+  for (int m = 0; m < MODE_COUNT; m++) {
+    if (!strcmp(name, _name[m])) return m;
+  }
+  return -1;
+}
+
 /* #####################################################
 #
 #  Color and Blinken Functions
